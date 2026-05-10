@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Libre Baskerville", serif;
+  --font-sans: "Inter", "Helvetica Neue", "Arial", sans-serif;
+  --color-brand-bg: #fdfcf9;
+  --color-lightest-1: #fdfcf9;
+  --color-lightest-2: #f7f3f0;
+  --color-light-1: #f1ede4;
+  --color-light-2: #e9e3d8;
+  --color-bright-1: #694d4d;
+  --color-bright-2: #dab785;
+  --color-dark-1: #a35d5d;
+  --color-dark-2: #8e5454;
+  --color-darkest-1: #6d4c4c;
+  --color-darkest-2: #5a4a42;
+  
+  --color-brand-bg-alt: var(--color-light-1);
+  --color-brand-text: #333333;
+  --color-brand-accent: var(--color-bright-2);
+  --color-brand-burgundy: var(--color-bright-1);
+  --color-brand-rose: var(--color-dark-1);
+  --color-brand-dark: var(--color-darkest-2);
+}
+
+@layer components {
+  .theme-lightest-1 { background-color: var(--color-lightest-1); color: var(--color-brand-text); }
+  .theme-lightest-2 { background-color: var(--color-lightest-2); color: var(--color-brand-text); }
+  .theme-light-1 { background-color: var(--color-light-1); color: var(--color-brand-text); }
+  .theme-light-2 { background-color: var(--color-light-2); color: var(--color-brand-text); }
+  .theme-bright-1 { background-color: var(--color-bright-1); color: #fff; }
+  .theme-bright-2 { background-color: var(--color-bright-2); color: var(--color-brand-text); }
+  .theme-dark-1 { background-color: var(--color-dark-1); color: #fff; }
+  .theme-dark-2 { background-color: var(--color-dark-2); color: #fff; }
+  .theme-darkest-1 { background-color: var(--color-darkest-1); color: #fff; }
+  .theme-darkest-2 { background-color: var(--color-darkest-2); color: #fff; }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-text antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes subtle-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-subtle-zoom {
+  animation: subtle-zoom 30s ease-in-out infinite alternate;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.nav-link {
+  @apply text-[13px] uppercase tracking-[0.25em] font-light transition-all duration-300 relative py-1;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-[1px] bg-brand-text transition-all duration-300;
+}
+
+.nav-link.active::after {
+  @apply w-full;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Custom Super-Ellipse / Squircle Mask */
+.squircle {
+  mask-image: url('data:image/svg+xml;utf8,<svg maskUnits="objectBoundingBox" viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg"><path d="M 0,0.5 C 0,0.1 0.1,0 0.5,0 S 1,0.1 1,0.5 0.9,1 0.5,1 0,0.9 0,0.5" /></svg>');
+  mask-size: 100% 100%;
+}
