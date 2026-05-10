@@ -53,12 +53,61 @@
   animation: subtle-zoom 30s ease-in-out infinite alternate;
 }
 
+@keyframes subtle-drift {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.1) translate(20px, 10px); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+.animate-subtle-drift {
+  animation: subtle-drift 15s ease-in-out infinite alternate;
+}
+
+@keyframes light-ray {
+  0% { stroke-dashoffset: 3000; }
+  100% { stroke-dashoffset: -3000; }
+}
+
+@keyframes bubble-float {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-100px) translateX(40px) scale(1.1); }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.animate-light-ray {
+  stroke-dasharray: 500 2500;
+  animation: light-ray 12s linear infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) skewX(-15deg); opacity: 0; }
+  20% { opacity: 0.5; }
+  50% { opacity: 0.8; transform: translateX(100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); opacity: 0; }
+}
+
+.animate-shine {
+  animation: shine 8s ease-in-out infinite;
+}
+
+.animate-bubble {
+  animation: bubble-float 15s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 4s ease-in-out infinite;
+}
+
 .font-serif {
   font-family: var(--font-serif);
 }
 
 .nav-link {
-  @apply text-[13px] uppercase tracking-[0.25em] font-light transition-all duration-300 relative py-1;
+  @apply text-[16px] uppercase tracking-[0.25em] font-bold transition-all duration-300 relative py-1;
 }
 
 .nav-link::after {

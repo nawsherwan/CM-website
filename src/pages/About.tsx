@@ -6,7 +6,7 @@ export default function About() {
       {/* Sophie Hero Section */}
       <section className="relative py-32 px-6 overflow-hidden">
         {/* Warm Multi-layered Gradient Glow */}
-        <div className="absolute inset-0 z-0 opacity-80 pointer-events-none bg-[radial-gradient(circle_at_40%_30%,#fff_0%,transparent_70%),radial-gradient(circle_at_70%_20%,#fcece4_0%,transparent_60%),radial-gradient(circle_at_20%_80%,#f7f3f0_0%,transparent_50%)]" />
+        <div className="absolute inset-0 z-0 opacity-80 pointer-events-none bg-[radial-gradient(circle_at_40%_30%,#fff_0%,transparent_70%),radial-gradient(circle_at_70%_20%,#fcece4_0%,transparent_60%),radial-gradient(circle_at_20%_80%,#f7f3f0_0%,transparent_50%)] animate-subtle-drift" />
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_80%_80%,var(--color-brand-rose)_0%,transparent_40%)]" />
 
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
